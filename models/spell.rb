@@ -8,7 +8,7 @@ class Spell
     @name = options['name']
     @school = options['school']
     @level = options['level'].to_i
-    @pages = options['level'].to_i
+    @pages = options['pages'].to_i
     @description = options['description']
   end
 
