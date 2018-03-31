@@ -1,0 +1,20 @@
+header .row {
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-family: Nodesto;
+  font-size: 50px;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+  font-family: Scaly;
+  padding: 0 20px;
+  margin: 0;
+}

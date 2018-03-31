@@ -3,12 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Compendium</title>
-
     <!-- links -->
     <link rel="shortcut icon" href="/images/title_icon.png" />
     <link rel="stylesheet" type="text/css" href="/styles/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/styles/layout.css">
   </head>
   <body>
+    <header class="container">
+      <div class="row">
+        <img class="logo" src="/images/logo_icon.png" alt="Spellbook icon" />
+        <h1>Compendium</h1>
+        <nav>
+          <a href="/"><p class="button home">Home</p></a>
+          <a href="/"><p class="button characters">Characters</p></a>
+          <a href="/"><p class="button spellbooks">Spellbooks</p></a>
+          <a href="/"><p class="button spells">Spells</p></a>
+          <a href="/"><p class="button about">About</p></a>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
