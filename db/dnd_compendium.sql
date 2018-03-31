@@ -8,7 +8,7 @@ CREATE TABLE characters(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   level INT,
-  class VARCHAR(255),
+  c_class VARCHAR(255),
   writing_skill INT
 );
 CREATE TABLE spell_slots(
@@ -26,7 +26,7 @@ CREATE TABLE spellbooks(
 CREATE TABLE spells(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  class VARCHAR(255),
+  c_class VARCHAR(255),
   school VARCHAR(255),
   level INT,
   pages INT,
