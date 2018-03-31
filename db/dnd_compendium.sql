@@ -20,7 +20,7 @@ CREATE TABLE spell_slots(
 CREATE TABLE spellbooks(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  n_pages INT,
+  pages INT,
   character_id INT8 REFERENCES characters(id)
 );
 CREATE TABLE spells(
