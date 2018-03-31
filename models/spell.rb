@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner')
+
 class Spell
   attr_reader :id
   attr_accessor :name, :school, :level, :pages, :description
