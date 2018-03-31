@@ -1,5 +1,5 @@
 class FixedChoices
-  self.classes()
+  def self.classes()
     return classes_array = [
       "Bard",
       "Cleric",
@@ -12,7 +12,7 @@ class FixedChoices
     ]
   end
 
-  self.schools()
+  def self.schools()
     school_array = [
       "Abjuration",
       "Conjuration",
