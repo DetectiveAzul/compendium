@@ -1,0 +1,38 @@
+/* Nodesto Fonts */
+
+@font-face {
+  font-family: Nodesto;
+  src: url('/fonts/nodesto/Nodesto Caps Condensed.otf');
+}
+
+@font-face {
+  font-family: Nodesto;
+  src: url('/fonts/nodesto/Nodesto Caps Condensed Italic.otf');
+  font-style: italic;
+}
+
+/* Scaly fonts */
+
+@font-face {
+  font-family: Scaly;
+  src: url('/fonts/scaly/scaly sans.otf');
+}
+
+@font-face {
+  font-family: Scaly;
+  src: url('/fonts/scaly/scaly sans bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Scaly;
+  src: url('/fonts/scaly/scaly sans italic.otf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Scaly;
+  src: url('/fonts/scaly/scaly sans bold italic.otf');
+  font-weight: bold;
+  font-style: italic;
+}

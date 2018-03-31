@@ -2,5 +2,5 @@ require('sinatra')
 require('sinatra/contrib/all')
 
 get "/" do
-  "Hello World"
+  erb(:root)
 end
