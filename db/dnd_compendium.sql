@@ -13,7 +13,7 @@ CREATE TABLE characters(
 );
 CREATE TABLE spell_slots(
   id SERIAL8 PRIMARY KEY,
-  char_id INT8 REFERENCES characters(id),
+  character_id INT8 REFERENCES characters(id),
   level INT,
   quantity INT
 );
