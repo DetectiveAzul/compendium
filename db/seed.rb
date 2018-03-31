@@ -1,8 +1,11 @@
+require('pry')
 require_relative('../models/spell')
 require_relative('../models/spellbook')
+require_relative('../models/learning')
 
 Spell.delete_all()
 Spellbook.delete_all()
+Learning.delete_all()
 
 spell01_hash = {
   'name' => 'Acid Splash',
@@ -33,10 +36,15 @@ spell04_hash = {
   'description' => "You touch one to three pebbles and imbue them with magic. You or someone else can make a ranged spell attack with one of the pebbles by throwing it or hurling it with a sling. If thrown, it has a range of 60 feet. If someone else attacks with the pebble, that attacker adds your spellcasting ability modifier, not the attacker’s, to the attack roll. On a hit, the target takes bludgeoning damage equal to 1d6 + your spellcasting ability modifier. Hit or miss, the spell then ends on the stone. If you cast this spell again, the spell ends early on any pebbles still affected by it."
 }
 
-spell01 = Spell.new(spell01_hash).save()
-spell02 = Spell.new(spell02_hash).save()
-spell03 = Spell.new(spell03_hash).save()
-spell04 = Spell.new(spell04_hash).save()
+spell01 = Spell.new(spell01_hash)
+spell02 = Spell.new(spell02_hash)
+spell03 = Spell.new(spell03_hash)
+spell04 = Spell.new(spell04_hash)
+
+spell01.save()
+spell02.save()
+spell03.save()
+spell04.save()
 
 spellbook01_hash = {
   "name" => "Level 1 Spellbook",
@@ -47,5 +55,25 @@ spellbook02_hash = {
   "pages" => 50
 }
 
-spellbook01 = Spellbook.new(spellbook01_hash).save()
-spellbook02 = Spellbook.new(spellbook02_hash).save()
+spellbook01 = Spellbook.new(spellbook01_hash)
+spellbook02 = Spellbook.new(spellbook02_hash)
+
+spellbook01.save()
+spellbook02.save()
+
+learning01 = Learning.new( {'spell_id' => spell01.id,'spellbook_id' => spellbook01.id } )
+learning02 = Learning.new( {'spell_id' => spell02.id,'spellbook_id' => spellbook01.id } )
+learning03 = Learning.new( {'spell_id' => spell03.id,'spellbook_id' => spellbook01.id } )
+learning04 = Learning.new( {'spell_id' => spell04.id,'spellbook_id' => spellbook01.id } )
+learning05 = Learning.new( {'spell_id' => spell03.id,'spellbook_id' => spellbook02.id } )
+learning06 = Learning.new( {'spell_id' => spell04.id,'spellbook_id' => spellbook02.id } )
+
+learning01.save()
+learning02.save()
+learning03.save()
+learning04.save()
+learning05.save()
+learning06.save()
+
+binding.pry()
+nil
