@@ -13,7 +13,7 @@ CREATE TABLE characters(
 );
 CREATE TABLE spell_slots(
   id SERIAL8 PRIMARY KEY,
-  character_id INT8 REFERENCES characters(id),
+  character_id INT8 REFERENCES characters(id) ON DELETE CASCADE,
   level INT,
   quantity INT
 );
@@ -21,7 +21,7 @@ CREATE TABLE spellbooks(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   pages INT,
-  character_id INT8 REFERENCES characters(id)
+  character_id INT8 REFERENCES characters(id) ON DELETE CASCADE
 );
 CREATE TABLE spells(
   id SERIAL8 PRIMARY KEY,
@@ -33,6 +33,6 @@ CREATE TABLE spells(
 );
 CREATE TABLE learnings(
   id SERIAL8 PRIMARY KEY,
-  spell_id INT8 REFERENCES spells(id),
-  spellbook_id INT8 REFERENCES spellbooks(id)
+  spell_id INT8 REFERENCES spells(id) ON DELETE CASCADE,
+  spellbook_id INT8 REFERENCES spellbooks(id) ON DELETE CASCADE
 );
