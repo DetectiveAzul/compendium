@@ -3,10 +3,12 @@ require_relative('../models/spell')
 require_relative('../models/spellbook')
 require_relative('../models/learning')
 require_relative('../models/character')
+require_relative('../models/spell_slot')
 
 Learning.delete_all()
 Spell.delete_all()
 Spellbook.delete_all()
+SpellSlot.delete_all()
 Character.delete_all()
 
 spell01_hash = {
@@ -67,6 +69,26 @@ character02 = Character.new(character02_hash)
 
 character01.save()
 character02.save()
+
+spellslot01 = SpellSlot.new({
+  'character_id' => character01.id,
+  'level' => 1,
+  'quantity' => 2
+   })
+spellslot02 = SpellSlot.new({
+  'character_id' => character02.id,
+  'level' => 1,
+  'quantity' => 4
+   })
+spellslot03 = SpellSlot.new({
+  'character_id' => character02.id,
+  'level' => 2,
+  'quantity' => 2
+   })
+
+spellslot01.save()
+spellslot02.save()
+spellslot03.save()
 
 spellbook01_hash = {
   "name" => "Level 1 Spellbook",
