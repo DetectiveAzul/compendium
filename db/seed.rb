@@ -2,10 +2,12 @@ require('pry')
 require_relative('../models/spell')
 require_relative('../models/spellbook')
 require_relative('../models/learning')
+require_relative('../models/character')
 
+Learning.delete_all()
 Spell.delete_all()
 Spellbook.delete_all()
-Learning.delete_all()
+Character.delete_all()
 
 spell01_hash = {
   'name' => 'Acid Splash',
@@ -46,20 +48,49 @@ spell02.save()
 spell03.save()
 spell04.save()
 
+character01_hash = {
+  'name' => 'Valtek',
+  'level' => 1,
+  'c_class' => 'Bard',
+  'writing_skill' => 2
+}
+
+character02_hash = {
+  'name' => "Gul'dan",
+  'level' => 2,
+  'c_class' => 'Warlock',
+  'writing_skill' => 2
+}
+
+character01 = Character.new(character01_hash)
+character02 = Character.new(character02_hash)
+
+character01.save()
+character02.save()
+
 spellbook01_hash = {
   "name" => "Level 1 Spellbook",
-  "pages" => 100
+  "pages" => 100,
+  "character_id" => character01.id
 }
 spellbook02_hash = {
   "name" => "Level 2 Spellbook",
-  "pages" => 50
+  "pages" => 50,
+  "character_id" => character02.id
+}
+spellbook03_hash = {
+  "name" => "Level 1 Spellbook",
+  "pages" => 75,
+  "character_id" => character02.id
 }
 
 spellbook01 = Spellbook.new(spellbook01_hash)
 spellbook02 = Spellbook.new(spellbook02_hash)
+spellbook03 = Spellbook.new(spellbook03_hash)
 
 spellbook01.save()
 spellbook02.save()
+spellbook03.save()
 
 learning01 = Learning.new( {'spell_id' => spell01.id,'spellbook_id' => spellbook01.id } )
 learning02 = Learning.new( {'spell_id' => spell02.id,'spellbook_id' => spellbook01.id } )
