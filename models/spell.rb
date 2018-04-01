@@ -41,4 +41,22 @@ class Spell
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
+
+  def delete()
+    sql = "DELETE FROM spells
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE spells
+    SET
+    (name, school, level, pages, description)
+    =
+    ($1, $2, $3, $4, $5)
+    WHERE id = $6;"
+    values = [@name, @school, @level, @pages, @description, @id]
+    SqlRunner.run(sql, values)
+  end
 end

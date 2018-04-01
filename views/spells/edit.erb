@@ -1,0 +1,21 @@
+<fieldset>
+<legend>Edit Spell</legend>
+<form id="edit-spell" method="post" action="/spells/<%=@spell.id%>">
+
+  <label for="school-select">School:</label>
+  <select id="school-select" name="school">
+    <% @schools.each do |school| %>
+    <option value="<%=school%>" <%= "selected" if @spell.school == school %>> <%=school%> </option>
+    <% end %>
+  </select>
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" value="<%=@spell.name%>" />
+  <label for="level">Level</label>
+  <input id="level" type="number" name="level" value=<%=@spell.level%> />
+  <label for="pages">Pages</label>
+  <input id="pages" type="number" name="pages" value=<%=@spell.pages%> />
+  <label for="description">Description</label>
+  <textarea name="description" form="edit-spell"> <%=@spell.description%> </textarea>
+  <input type="submit" value="Update Spell" />
+</form>
+</fieldset>

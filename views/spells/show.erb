@@ -1,0 +1,9 @@
+<p><%= @spell.name %></p>
+<p><%= @spell.school %></p>
+<p><%= @spell.level %></p>
+<p><%= @spell.pages %></p>
+<p><%= @spell.description %></p>
+<a href="/spells/<%=@spell.id%>/edit"><button>Edit Spell</button></a>
+<form method="post" action="/spells/<%=@spell.id%>/delete">
+  <input type="submit" value="Delete Spell" />
+</form>

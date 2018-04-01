@@ -13,7 +13,7 @@ class FixedChoices
   end
 
   def self.schools()
-    school_array = [
+    return school_array = [
       "Abjuration",
       "Conjuration",
       "Divination",

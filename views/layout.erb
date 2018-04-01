@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/layout.css">
   </head>
   <body>
+    <!-- header -->
     <header class="container">
       <div class="row">
         <img class="logo" src="/images/logo_icon.png" alt="Spellbook icon" />
@@ -17,12 +18,17 @@
           <a href="/"><p class="button home">Home</p></a>
           <a href="/"><p class="button characters">Characters</p></a>
           <a href="/"><p class="button spellbooks">Spellbooks</p></a>
-          <a href="/"><p class="button spells">Spells</p></a>
+          <a href="/spells"><p class="button spells">Spells</p></a>
           <a href="/"><p class="button about">About</p></a>
         </nav>
       </div>
     </header>
+    <!-- body -->
     <%= yield %>
+
+    <!-- footer -->
+    <footer>
+    </footer>
   </body>
 </html>
 

@@ -1,0 +1,21 @@
+<fieldset>
+<legend>New Spells</legend>
+<form id="new-spell" method="post" action="/spells">
+
+  <label for="school-select">School:</label>
+  <select id="school-select" name="school">
+    <% @schools.each do |school| %>
+    <option value="<%=school%>"> <%=school%> </option>
+    <% end %>
+  </select>
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" />
+  <label for="level">Level</label>
+  <input id="level" type="number" name="level" />
+  <label for="pages">Pages</label>
+  <input id="pages" type="number" name="pages" />
+  <label for="description">Description</label>
+  <textarea name="description" form="new-spell"></textarea>
+  <input type="submit" value="Save Spell" />
+</form>
+</fieldset>
