@@ -1,0 +1,7 @@
+<p><%= @spellbook.name %></p>
+<p><%= @spellbook.pages %></p>
+<p><%= @spellbook.character.name %></p>
+<a href="/spellbooks/<%=@spellbook.id%>/edit"><button>Edit Spellbook</button></a>
+<form method="post" action="/spellbooks/<%=@spellbook.id%>/delete">
+  <input type="submit" value="Delete Spellbook" />
+</form>

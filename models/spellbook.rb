@@ -1,3 +1,5 @@
+require_relative('character')
+
 class Spellbook
   attr_reader :id
   attr_accessor :name, :pages, :character_id
@@ -37,4 +39,30 @@ class Spellbook
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
+
+  def delete()
+    sql = "DELETE FROM spellbooks
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE spellbooks
+    SET
+    (name, pages, character_id)
+    =
+    ($1, $2, $3)
+    WHERE id = $4"
+    values = [@name, @pages, @character_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def character()
+    sql = "SELECT * FROM characters
+    WHERE characters.id = $1"
+    values = [@character_id]
+    result = SqlRunner.run(sql, values)
+    return Character.new(result.first) unless result.first == nil
+  end 
 end
