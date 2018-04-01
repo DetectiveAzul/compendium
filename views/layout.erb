@@ -8,28 +8,25 @@
     <link rel="stylesheet" type="text/css" href="/styles/fonts.css">
     <link rel="stylesheet" type="text/css" href="/styles/layout.css">
   </head>
+  <!--body -->
   <body>
-    <!-- header -->
-    <header class="container">
-      <div class="row">
-        <img class="logo" src="/images/logo_icon.png" alt="Spellbook icon" />
-        <h1>Compendium</h1>
-        <nav>
-          <a href="/"><p class="button home">Home</p></a>
-          <a href="/characters"><p class="button characters">Characters</p></a>
-          <a href="/spellbooks"><p class="button spellbooks">Spellbooks</p></a>
-          <a href="/spells"><p class="button spells">Spells</p></a>
-          <a href="/learnings"><p class="button learnings">Learnings</p></a>
-          <a href="/"><p class="button about">About</p></a>
-        </nav>
-      </div>
-    </header>
-    <!-- body -->
+    <div class="row">
+      <div class="item"><img class="logo" src="/images/logo_icon.png" alt="Spellbook icon" /></div>
+      <div class="item"><h1 class="title">Compendium</h1></div>
+        <div class="item">
+          <a class="button home" href="/">
+            <p>Home</p></a></div>
+          <a class="button characters" href="/characters">
+            <p>Characters</p></a>
+          <a class="button spellbooks" href="/spellbooks">
+            <p>Spellbooks</p></a>
+          <a class="button spells" href="/spells">
+            <p>Spells</p></a>
+          <a class="button about" href="/">
+            <p>About</p></a>
+          </div>
+    </div>
     <%= yield %>
-
-    <!-- footer -->
-    <footer>
-    </footer>
   </body>
 </html>
 
