@@ -1,0 +1,21 @@
+<fieldset>
+<legend>Edit Learning</legend>
+<form id="edit-learning" method="post" action="/learnings/<%= @learning.id %>">
+
+  <label for="Spellbook-select">Spellbook:</label>
+  <select id="spellbook-select" name="spellbook_id">
+    <% @spellbooks.each do |spellbook| %>
+    <option value="<%=spellbook.id%>" <% "selected" if spellbook.id == @learning.spellbook.id %> > <%=spellbook.name%> </option>
+    <% end %>
+  </select>
+
+  <label for="Spell-select">Spell:</label>
+  <select id="spell-select" name="spell_id">
+    <% @spells.each do |spell| %>
+    <option value="<%=spell.id%>" <% "selected" if spell.id == @learning.spell.id %> > <%=spell.name%> </option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Edit Learning" />
+</form>
+</fieldset>
