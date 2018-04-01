@@ -1,0 +1,8 @@
+<p><%= @character.name %></p>
+<p><%= @character.level %></p>
+<p><%= @character.c_class %></p>
+<p><%= @character.writing_skill %></p>
+<a href="/characters/<%=@character.id%>/edit"><button>Edit Character</button></a>
+<form method="post" action="/characters/<%=@character.id%>/delete">
+  <input type="submit" value="Delete Character" />
+</form>

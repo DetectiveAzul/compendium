@@ -38,4 +38,22 @@ class Character
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
+
+  def delete()
+    sql = "DELETE FROM characters
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE characters
+    SET
+    (name, level, c_class, writing_skill)
+    =
+    ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@name, @level, @c_class, @writing_skill, @id]
+    SqlRunner.run(sql, values)
+  end
 end
