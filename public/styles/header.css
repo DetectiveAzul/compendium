@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Scaly;
+}
+
+.row {
+  display: flex;
+}
+
+.logo {
+  height: 64px;
+  width: 64px;
+  margin: 5px;
+}
+
+.title {
+  font-family: Nodesto;
+  font-size: 64px;
+  margin: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  text-decoration: none;
+  height: 55px;
+  width: 110px;
+  background-color: rgba(0,0,0, 65%);
+  margin: 10px;
+  color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown {
+    position: relative;
+}
+
+/* (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0, 65%);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.home:hover {
+  background-color: rgb(0, 197, 226);
+}
+.characters:hover, .characters.dropdown:hover .dropbtn {
+  background-color: rgb(250, 175, 30);
+}
+.spellbooks:hover, .spellbooks.dropdown:hover .dropbtn {
+  background-color: rgb(0, 239, 185);
+}
+.spells:hover, .spells.dropdown:hover .dropbtn {
+  background-color: rgb(253, 56, 0);
+}
+.about:hover {
+  background-color: rgb(150, 117, 249);
+}
