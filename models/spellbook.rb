@@ -1,4 +1,6 @@
+require_relative('../db/sql_runner')
 require_relative('character')
+require_relative('learning')
 
 class Spellbook
   attr_reader :id
@@ -82,5 +84,5 @@ class Spellbook
 
   def spells_count()
     return self.spells.count()
-  end 
+  end
 end
