@@ -1,22 +1,19 @@
-<fieldset>
-<legend>New Character</legend>
-<form id="new-character" method="post" action="/characters">
-
-  <label for="name">Name:</label>
-  <input id="name" type="text" name="name" />
-
-  <label for="class-select">Class:</label>
-  <select id="class-select" name="c_class">
-    <% @classes.each do |c_class| %>
-    <option value="<%=c_class%>"> <%=c_class%> </option>
-    <% end %>
-  </select>
-
-  <label for="level">Level</label>
-  <input id="level" type="number" name="level" />
-  <label for="writing-skill">Writing Skill</label>
-  <input id="writing-skill" type="number" name="writing_skill" />
-
-  <input type="submit" value="Save Character" />
+<form class= "spell-form" id="new-character" method="post" action="/characters">
+  <input id="name" type="text" name="name" value="Character Name" />
+    <div class="same-row">
+      <label for="classes-select"><p>Character Class:</p></label>
+      <select id="classes-select" name="c_class">
+        <% @classes.each do |c_class| %>
+        <option class= "c_class" value="<%=c_class%>"> <%=c_class%> </option>
+        <% end %>
+      </select>
+    </div>
+    <div class="same-row">
+      <label for="level"><p>Level:</p></label>
+      <input id="level" type="number" name="level" value="1" />
+    </div>
+    <div class="buttons">
+      <a href="/characters"><button>Discard Changes</button></a>
+      <input type="submit" value="Create Character" />
+    </div>
 </form>
-</fieldset>

@@ -1,22 +1,23 @@
-<fieldset>
-<legend>Edit Character</legend>
-<form id="edit-character" method="post" action="/characters/<%=@character.id%>">
-
-  <label for="name">Name:</label>
+<form class= "spell-form" id="edit-character" method="post" action="/characters/<%=@character.id%>">
   <input id="name" type="text" name="name" value="<%=@character.name%>" />
-
-  <label for="class-select">Class:</label>
-  <select id="class-select" name="c_class">
-    <% @classes.each do |c_class| %>
-    <option value="<%=c_class%>" <% "selected" if @character.c_class == c_class %> > <%=c_class%> </option>
-    <% end %>
-  </select>
-
-  <label for="level">Level</label>
-  <input id="level" type="number" name="level" value="<%=@character.level%>" />
-  <label for="writing-skill">Writing Skill</label>
-  <input id="writing-skill" type="number" name="writing_skill" value="<%=@character.writing_skill%>" />
-
-  <input type="submit" value="Update Character" />
+  <div class="same-row">
+    <label for="classes-select"><p>Character Class:</p></label>
+    <select id="classes-select" name="c_class">
+      <% @classes.each do |c_class| %>
+      <option class= "c_class" value="<%=c_class%>"
+        <%= "selected" if @character.c_class == c_class %>>
+        <%=c_class%>
+      </option>
+      <% end %>
+    </select>
+  </div>
+  <div class="same-row">
+    <label for="level"><p>Level:</p></label>
+    <input id="level" type="number" name="level" value="<%=@character.level%>" />
+  </div>
+  <textarea name="description" form="edit-character"> <%=@character.description%> </textarea>
+  <div class="buttons">
+    <a href="/characters/<%=@character.id%>"><button>Discard Changes</button></a>
+    <input type="submit" value="Update Character" />
+  </div>
 </form>
-</fieldset>

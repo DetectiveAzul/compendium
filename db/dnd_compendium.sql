@@ -9,6 +9,7 @@ CREATE TABLE characters(
   name VARCHAR(255),
   level INT,
   c_class VARCHAR(255),
+  description TEXT,
   writing_skill INT
 );
 CREATE TABLE spell_slots(

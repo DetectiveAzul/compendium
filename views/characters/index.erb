@@ -1,6 +1,26 @@
-<% @characters.each do |character| %>
-  <p><%= character.name %></p>
-  <p><%= character.level %></p>
-  <p><%= character.c_class %></p>
-  <p><%= character.writing_skill %></p>
-<% end %>
+<div class = "spell-index">
+  <div class="spell-legend">
+    <div class="spell-item"><p><strong>Class</strong></p></div>
+    <div class="spell-item"><p><strong>Level</strong></p></div>
+    <div class="spell-item"><p><strong>Name</strong></p></div>
+    <div class="spell-item"><p><strong>Description</strong></p></div>
+  </div>
+  <% @characters.each do |character| %>
+    <a href="/characters/<%=character.id%>" class="spell-row">
+      <div class="spell-item class">
+        <p>
+          <%= character.c_class %>
+        </p>
+      </div>
+      <div class="spell-item level">
+        <p><%= character.level %></p>
+      </div>
+      <div class="spell-item name">
+        <p><%= character.name %></p>
+      </div>
+      <div class="spell-item description ellipsis">
+        <p><%= character.description %></p>
+      </div>
+    </a>
+  <% end %>
+</div>
