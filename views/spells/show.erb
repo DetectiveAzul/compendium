@@ -1,12 +1,20 @@
-<div class="spell-parent">
-    <h1 class="title"><%= @spell.name %></h1>
-    <h2 class="subtitle"><%= "#{@spell.school} level #{@spell.level}"%></h2>
-    <p class="description"><%= @spell.description %></p>
-    <div class="buttons">
-      <a href="/spells"><button>Go Back</button></a>
-      <a href="/spells/<%=@spell.id%>/edit"><button>Edit Spell</button></a>
-      <form method="post" action="/spells/<%=@spell.id%>/delete">
-        <input type="submit" value="Delete Spell" />
-      </form>
-    </div>
+<div class="super-parent">
+  <!-- spell card -->
+  <div class="spell-parent">
+      <h1 class="title"><%= @spell.name %></h1>
+      <h2 class="subtitle"><%= "#{@spell.school} level #{@spell.level}"%></h2>
+      <p class="description"><%= @spell.description %></p>
+      <div class="buttons">
+        <a href="/spells"><button>Go Back</button></a>
+        <a href="/spells/<%=@spell.id%>/edit"><button>Edit Spell</button></a>
+        <form method="post" action="/spells/<%=@spell.id%>/delete">
+          <input type="submit" value="Delete Spell" />
+        </form>
+      </div>
+  </div>
+  <!-- learning card -->
+  <div class="spell-parent">
+    <h1 class="title">Studied by</h1>
+    <p class="content">Test</p>
+  </div>
 </div>

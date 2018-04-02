@@ -1,6 +1,14 @@
+.super-parent {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .spell-parent {
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 5px;
   padding: 15px;
   display: flex;
   align-items: flex-start;
@@ -23,6 +31,11 @@
   border-top: thin solid rgb(253, 56, 0);
 }
 
+.content {
+  padding: 15px 5px;
+  width: 100%;
+  border-top: thin solid rgb(253, 56, 0);
+}
 .spell-parent .buttons {
   width: 100%;
   display: flex;
