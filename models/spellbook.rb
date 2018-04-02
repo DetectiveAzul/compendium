@@ -64,5 +64,23 @@ class Spellbook
     values = [@character_id]
     result = SqlRunner.run(sql, values)
     return Character.new(result.first) unless result.first == nil
+  end
+
+  def learnings()
+    sql = "SELECT * FROM learnings
+    WHERE spellbook_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |learning| Learning.new(learning) } unless result == nil
+  end
+
+  def spells()
+    learnings = self.learnings()
+    spells = learnings.map { |learning| learning.spell }
+    return spells
+  end
+
+  def spells_count()
+    return self.spells.count()
   end 
 end

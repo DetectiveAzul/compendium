@@ -57,4 +57,8 @@ class Character
     values = [@name, @level, @c_class, @description, @writing_skill, @id]
     SqlRunner.run(sql, values)
   end
+
+  def spellbooks()
+  end
+  
 end
