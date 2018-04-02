@@ -14,7 +14,10 @@
   </div>
   <!-- learning card -->
   <div class="spell-parent">
-    <h1 class="title">Studied by</h1>
-    <p class="content">Test</p>
+    <h1 class="title content">Students</h1><br>
+    <%="Nobody has learned this spell yet" if @learnings.empty? %>
+    <% @learnings.each do |learning| %>
+    <p><%= "#{learning.spellbook.name} by #{learning.spellbook.character.name}" %></p>
+    <% end %>
   </div>
 </div>

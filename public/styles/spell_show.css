@@ -32,9 +32,10 @@
 }
 
 .content {
-  padding: 15px 5px;
   width: 100%;
-  border-top: thin solid rgb(253, 56, 0);
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  border-bottom: thin solid rgb(253, 56, 0);
 }
 .spell-parent .buttons {
   width: 100%;

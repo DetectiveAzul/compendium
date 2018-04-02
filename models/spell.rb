@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('spellbook')
 
 class Spell
   attr_reader :id
@@ -58,5 +59,13 @@ class Spell
     WHERE id = $6;"
     values = [@name, @school, @level, @pages, @description, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def learnings()
+    sql = "SELECT * FROM learnings
+    WHERE spell_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |learning| Learning.new(learning) } unless result == nil
   end
 end

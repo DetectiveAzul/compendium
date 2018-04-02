@@ -22,6 +22,7 @@ end
 #show
 get '/spells/:id' do
   @spell = Spell.find(params['id'].to_i)
+  @learnings = @spell.learnings()
   erb(:"/spells/show")
 end
 
