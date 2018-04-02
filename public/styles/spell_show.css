@@ -1,0 +1,30 @@
+.spell-parent {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 50%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.spell-parent .title, .subtitle {
+  font-family: Nodesto;
+  margin: 0px;
+  padding: 0px;
+}
+
+.spell-parent .description {
+  padding: 15px 5px;
+  border-top: thin solid rgb(253, 56, 0);
+}
+
+.spell-parent .buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
