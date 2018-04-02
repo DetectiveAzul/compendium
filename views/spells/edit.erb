@@ -1,21 +1,20 @@
-<fieldset>
-<legend>Edit Spell</legend>
-<form id="edit-spell" method="post" action="/spells/<%=@spell.id%>">
-
-  <label for="school-select">School:</label>
-  <select id="school-select" name="school">
-    <% @schools.each do |school| %>
-    <option value="<%=school%>" <%= "selected" if @spell.school == school %>> <%=school%> </option>
-    <% end %>
-  </select>
-  <label for="name">Name:</label>
-  <input id="name" type="text" name="name" value="<%=@spell.name%>" />
-  <label for="level">Level</label>
-  <input id="level" type="number" name="level" value=<%=@spell.level%> />
-  <label for="pages">Pages</label>
-  <input id="pages" type="number" name="pages" value=<%=@spell.pages%> />
-  <label for="description">Description</label>
-  <textarea name="description" form="edit-spell"> <%=@spell.description%> </textarea>
-  <input type="submit" value="Update Spell" />
+<form class= "spell-form" id="edit-spell" method="post" action="/spells/<%=@spell.id%>">
+    <input id="name" type="text" name="name" value="<%=@spell.name%>" />
+      <div class="same-row">
+        <label for="school-select"><p>School:</p></label>
+        <select id="school-select" name="school">
+          <% @schools.each do |school| %>
+          <option class= "school" value="<%=school%>" <%= "selected" if @spell.school == school %>> <%=school%> </option>
+          <% end %>
+        </select>
+      </div>
+      <div class="same-row">
+        <label for="level"><p>Level:</p></label>
+        <input id="level" type="number" name="level" value=<%=@spell.level%> />
+      </div>
+    <textarea name="description" form="edit-spell"> <%=@spell.description%> </textarea>
+    <div class="buttons">
+      <a href="/spells/<%=@spell.id%>"><button>Discard Changes</button></a>
+      <input type="submit" value="Update Spell" />
+    </div>
 </form>
-</fieldset>

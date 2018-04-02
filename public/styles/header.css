@@ -15,7 +15,10 @@ html {
 .title-and-logo {
   display: flex;
   justify-content: flex-start;
+  color: black;
+  text-decoration: none;
 }
+
 .menu {
   display: flex;
   justify-content: flex-end;
