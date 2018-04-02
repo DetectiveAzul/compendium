@@ -29,6 +29,10 @@
   margin-right: 10px;
 }
 
+.spell-students a {
+  color: black;
+}
+
 .spell-parent .student-entry {
   display: flex;
   flex-direction: row;

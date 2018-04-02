@@ -20,7 +20,14 @@
       <% @learnings.each do |learning| %>
       <div class="student-entry">
         <p>
-          <%= "Written on <strong>'#{learning.spellbook.name}'</strong> by <strong>'#{learning.spellbook.character.name}'</strong>" %>
+          Written on
+          <a href= "<%="/spellbooks/#{learning.spellbook_id}"%>" >
+            <%= "<strong>'#{learning.spellbook.name}'</strong>"%>
+          </a>
+          by
+          <a href= "<%="/spellbooks/#{learning.spellbook.character_id}"%>" >
+            <%= "<strong>'#{learning.spellbook.character.name}'</strong>" %>
+          </a>
         </p>
         <form method="post" action="/learnings/<%=learning.id%>/delete">
           <input type="submit" value="Delete" />
