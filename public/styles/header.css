@@ -6,9 +6,10 @@ html {
   font-family: Scaly;
 }
 
-.row {
+.header {
   display: flex;
   justify-content: space-between;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .title-and-logo {
@@ -18,10 +19,6 @@ html {
 .menu {
   display: flex;
   justify-content: flex-end;
-}
-
-.header {
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .logo {

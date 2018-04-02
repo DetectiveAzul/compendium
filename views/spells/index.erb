@@ -1,7 +1,29 @@
-<% @spells.each do |spell| %>
-  <p><%= spell.name %></p>
-  <p><%= spell.school %></p>
-  <p><%= spell.level %></p>
-  <p><%= spell.pages %></p>
-  <p><%= spell.description %></p>
-<% end %>
+<div class = "spell-index">
+  <div class="spell-legend">
+    <div class="spell-item"><p><strong>Level</strong></p></div>
+    <div class="spell-item"><p><strong>School</strong></p></div>
+    <div class="spell-item"><p><strong>Name</strong></p></div>
+    <div class="spell-item"><p><strong>Description</strong></p></div>
+  </div>
+  <% @spells.each do |spell| %>
+    <a href="/spells/<%=spell.id%>" class="spell-row">
+      <div class="spell-item level">
+        <p><% if spell.level == 0 %>
+          <%= "Cantrip" %>
+          <% else %>
+          <%= spell.level %>
+          <% end %>
+        </p>
+      </div>
+      <div class="spell-item school">
+        <p><%= spell.school %></p>
+      </div>
+      <div class="spell-item name">
+        <p><%= spell.name %></p>
+      </div>
+      <div class="spell-item description ellipsis">
+        <p><%= spell.description %></p>
+      </div>
+    </a>
+  <% end %>
+</div>
