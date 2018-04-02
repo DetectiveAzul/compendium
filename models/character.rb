@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner')
+require_relative('spellbook')
 class Character
   attr_reader :id
   attr_accessor :name, :level, :c_class, :writing_skill, :description
@@ -59,6 +61,11 @@ class Character
   end
 
   def spellbooks()
+    sql = "SELECT * FROM spellbooks
+    WHERE spellbooks.character_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |spellbook| Spellbook.new(spellbook) } unless result == nil
   end
-  
+
 end
