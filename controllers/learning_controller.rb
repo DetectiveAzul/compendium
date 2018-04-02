@@ -17,8 +17,9 @@ end
 
 #create
 post '/learnings' do
-  Learning.new(params).save()
-  redirect '/learnings'
+  learning = Learning.new(params)
+  learning.save()
+  redirect "/spells/#{learning.spell_id}"
 end
 
 #show
@@ -47,5 +48,5 @@ end
 post '/learnings/:id/delete' do
   learning = Learning.find(params[:id].to_i)
   learning.delete()
-  redirect '/learnings'
+  redirect "/spells/#{learning.spell_id}"
 end

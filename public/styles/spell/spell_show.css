@@ -9,26 +9,32 @@
 .spell-parent {
   margin-top: 20px;
   margin-left: 5px;
+  width: 50%;
+  min-width: 25%;
   padding: 15px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   align-content: flex-start;
   flex-direction: column;
-  width: 50%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
 }
 
 .spell-parent .spell-students {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .spell-students p {
   margin-right: 10px;
+}
+
+.spell-parent .student-entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .spell-parent .title, .subtitle {
