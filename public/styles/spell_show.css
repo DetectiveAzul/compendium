@@ -20,6 +20,17 @@
 
 }
 
+.spell-parent .spell-students {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.spell-students p {
+  margin-right: 10px;
+}
+
 .spell-parent .title, .subtitle {
   font-family: Nodesto;
   margin: 0px;

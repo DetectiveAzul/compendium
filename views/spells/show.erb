@@ -16,8 +16,29 @@
   <div class="spell-parent">
     <h1 class="title content">Students</h1><br>
     <%="Nobody has learned this spell yet" if @learnings.empty? %>
-    <% @learnings.each do |learning| %>
-    <p><%= "#{learning.spellbook.name} by #{learning.spellbook.character.name}" %></p>
-    <% end %>
+    <div class="spell-students">
+      <% @learnings.each do |learning| %>
+      <p>
+        <%= "Written on <strong>'#{learning.spellbook.name}'</strong> by <strong>'#{learning.spellbook.character.name}'</strong>" %>
+      </p>
+      <form method="post" action="/learnings/<%=learning.id%>/delete">
+        <input type="submit" value="Delete" />
+      </form>
+      <% end %>
+    </div>
+    <br>
+    <h1 class="title content">Learn</h1>
+    <p>Add this Spell to:</p>
+    <form id="new-learning" method="post" action="/learnings">
+      <select id="spellbook-select" name="spellbook_id">
+        <% @spellbooks.each do |spellbook| %>
+        <option value="<%=spellbook.id%>">
+          <%="#{spellbook.name} from #{spellbook.character.name}"%>
+        </option>
+        <% end %>
+      </select>
+      <input style="display: none;" name="spell_id" value="<%= @spell.id%>" />
+      <input type="submit" value="Save Learning" />
+    </form>
   </div>
 </div>

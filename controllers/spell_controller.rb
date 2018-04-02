@@ -1,5 +1,6 @@
 require_relative('../models/spell')
 require_relative('../models/fixed_choices')
+require_relative('../models/spellbook')
 
 #index
 get '/spells' do
@@ -23,6 +24,7 @@ end
 get '/spells/:id' do
   @spell = Spell.find(params['id'].to_i)
   @learnings = @spell.learnings()
+  @spellbooks = Spellbook.all()
   erb(:"/spells/show")
 end
 
