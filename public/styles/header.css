@@ -79,6 +79,7 @@ html {
 .characters:hover, .characters.dropdown:hover .dropbtn {
   background-color: rgb(250, 175, 30);
 }
+
 .spellbooks:hover, .spellbooks.dropdown:hover .dropbtn {
   background-color: rgb(0, 239, 185);
 }
