@@ -22,7 +22,8 @@ CREATE TABLE spellbooks(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   pages INT,
-  character_id INT8 REFERENCES characters(id) ON DELETE CASCADE
+  character_id INT8 REFERENCES characters(id) ON DELETE CASCADE,
+  description TEXT
 );
 CREATE TABLE spells(
   id SERIAL8 PRIMARY KEY,

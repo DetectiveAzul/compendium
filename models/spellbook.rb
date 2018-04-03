@@ -4,11 +4,12 @@ require_relative('learning')
 
 class Spellbook
   attr_reader :id
-  attr_accessor :name, :pages, :character_id
+  attr_accessor :name, :pages, :character_id, :description
   def initialize(options)
     @id = options['id'].to_i unless options['id'] == nil
     @name = options['name']
     @pages = options['pages'].to_i
+    @description = options['description']
     @character_id = options['character_id'].to_i unless options['character_id'] == nil
   end
 
@@ -33,11 +34,11 @@ class Spellbook
 
   def save()
     sql = "INSERT INTO spellbooks
-    ( name, pages, character_id )
+    ( name, pages, character_id, description )
     VALUES
-    ( $1, $2, $3 )
+    ( $1, $2, $3, $4 )
     RETURNING id"
-    values = [@name, @pages, @character_id]
+    values = [@name, @pages, @character_id, @description]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
@@ -52,11 +53,11 @@ class Spellbook
   def update()
     sql = "UPDATE spellbooks
     SET
-    (name, pages, character_id)
+    (name, pages, character_id, description)
     =
-    ($1, $2, $3)
-    WHERE id = $4"
-    values = [@name, @pages, @character_id, @id]
+    ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@name, @pages, @character_id, @description, @id]
     SqlRunner.run(sql, values)
   end
 

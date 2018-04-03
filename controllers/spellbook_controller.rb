@@ -14,8 +14,9 @@ end
 
 #create
 post '/spellbooks' do
-  Spellbook.new(params).save()
-  redirect '/spellbooks'
+  spellbook = Spellbook.new(params)
+  spellbook.save()
+  redirect "/spellbooks/#{spellbook.id}"
 end
 
 #show

@@ -1,5 +1,30 @@
-<% @spellbooks.each do |spellbook| %>
-  <p><%= spellbook.name %></p>
-  <p><%= spellbook.pages %></p>
-  <p><%= spellbook.character.name %></p>
-<% end %>
+<div class = "spell-index">
+  <div class="spell-legend">
+    <div class="spell-item"><p><strong>Owner</strong></p></div>
+    <div class="spell-item"><p><strong>Owner Class</strong></p></div>
+    <div class="spell-item"><p><strong>Spellbook Name</strong></p></div>
+    <div class="spell-item"><p><strong>Spells Count</strong></p></div>
+    <div class="spell-item description"><p><strong>Description</strong></p></div>
+  </div>
+  <% @spellbooks.each do |spellbook| %>
+    <a href="/spellbooks/<%=spellbook.id%>" class="spell-row">
+      <div class="spell-item owner">
+        <p>
+          <%= spellbook.character.name %>
+        </p>
+      </div>
+      <div class="spell-item owner-class">
+        <p><%= spellbook.character.c_class %></p>
+      </div>
+      <div class="spell-item name">
+        <p><%= spellbook.name %></p>
+      </div>
+      <div class="spell-item spell-count">
+        <p><%= spellbook.spells_count %></p>
+      </div>
+      <div class="spell-item description">
+        <p><%= spellbook.description %></p>
+      </div>
+    </a>
+  <% end %>
+</div>

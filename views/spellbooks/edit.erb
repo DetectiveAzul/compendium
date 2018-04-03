@@ -1,17 +1,18 @@
-<fieldset>
-<legend>New Spellbook</legend>
-<form id="new-spellbook" method="post" action="/spellbooks/<%=@spellbook.id%>">
-
-  <label for="character-select">Owner:</label>
-  <select id="character-select" name="character_id">
-    <% @characters.each do |character| %>
-    <option value="<%=character.id%>" <% "selected" if character.id == @spellbook.character.id %> > <%=character.name%> </option>
-    <% end %>
-  </select>
-  <label for="name">Name:</label>
+<form class= "spell-form" id="edit-spellbook" method="post" action="/spellbooks/<%=@spellbook.id%>">
   <input id="name" type="text" name="name" value="<%=@spellbook.name%>" />
-  <label for="pages">Pages</label>
-  <input id="pages" type="number" name="pages" value="<%=@spellbook.pages%>" />
-  <input type="submit" value="Save Spellbook" />
+  <div class="same-row">
+    <label for="owner-select"><p>Owner:</p></label>
+    <select id="owner-select" name="character_id">
+      <% @characters.each do |character| %>
+      <option class= "owner" value="<%=character.id%>"
+        <%= "selected" if character.id == @spellbook.character_id%> >
+        <%=character.name%>
+      </option>
+      <% end %>
+    </select>
+  </div>
+  <textarea name="description" form="edit-spellbook"> <%=@spellbook.description%> </textarea>
+  <div class="buttons">
+    <input type="submit" value="Edit Spellbook" />
+  </div>
 </form>
-</fieldset>
