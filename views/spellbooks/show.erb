@@ -36,23 +36,30 @@
         <div class="spell-item"><p><strong>School</strong></p></div>
         <div class="spell-item"><p><strong>Name</strong></p></div>
       </div>
-      <% @spells.each do |spell| %>
-        <a href="/spells/<%=spell.id%>" class="spell-row">
+      <% @learnings.each do |learning| %>
+        <div class="same-row">
+          <a href="/spells/<%=learning.spell.id%>" class="spell-row">
+            <div class="spell-item level">
+              <p href="/spells/<%=learning.spell.id%>"><% if learning.spell.level == 0 %>
+                <%= "Cantrip" %>
+                <% else %>
+                <%= learning.spell.level %>
+                <% end %>
+              </p>
+            </div>
+            <div class="spell-item">
+              <p> <%= learning.spell.school %> </p>
+            </div>
+            <div class="spell-item">
+              <p> <%= learning.spell.name %> </p>
+            </div>
+          </a>
           <div class="spell-item">
-            <p><% if spell.level == 0 %>
-              <%= "Cantrip" %>
-              <% else %>
-              <%= spell.level %>
-              <% end %>
-            </p>
+            <form method="post" action="/learnings/<%=learning.id%>/delete/spellbooks">
+              <input class="button delete" type="submit" value="Delete">
+            </form>
           </div>
-          <div class="spell-item">
-            <p> <%= spell.school %> </p>
-          </div>
-          <div class="spell-item">
-            <p> <%= spell.name %> </p>
-          </div>
-        </a>
+        </div>
       <% end %>
     </div>
   </div>

@@ -51,8 +51,14 @@ post '/learnings/:id' do
 end
 
 #delete
-post '/learnings/:id/delete' do
+post '/learnings/:id/delete/spells' do
   learning = Learning.find(params[:id].to_i)
   learning.delete()
   redirect "/spells/#{learning.spell_id}"
+end
+
+post '/learnings/:id/delete/spellbooks' do
+  learning = Learning.find(params[:id].to_i)
+  learning.delete()
+  redirect "/spellbooks/#{learning.spellbook_id}"
 end
