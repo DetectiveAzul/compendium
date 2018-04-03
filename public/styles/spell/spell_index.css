@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%
 }
 
 .spell-legend {
@@ -49,4 +50,8 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.spell-index .long-size {
+  width: 75%;
 }

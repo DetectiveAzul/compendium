@@ -42,8 +42,7 @@
 }
 
 .spell-parent .description {
-  padding: 15px 5px;
-  border-top: thin solid rgb(253, 56, 0);
+  padding: 0px 10px;
 }
 
 .content {
@@ -57,4 +56,8 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+.spell-parent .spell-row {
+  width: 95%;
 }

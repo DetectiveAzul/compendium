@@ -1,8 +1,41 @@
-<p><%= @character.name %></p>
-<p><%= @character.level %></p>
-<p><%= @character.c_class %></p>
-<p><%= @character.writing_skill %></p>
-<a href="/characters/<%=@character.id%>/edit"><button>Edit Character</button></a>
-<form method="post" action="/characters/<%=@character.id%>/delete">
-  <input type="submit" value="Delete Character" />
-</form>
+<div class="super-parent">
+  <!-- character card -->
+  <div class="spell-parent">
+    <h1 class="title"><%= @character.name %></h1>
+    <h2 class="subtitle content"><%= "#{@character.class} level #{@character.level}"%></h2>
+    <p class="description"><%= @character.description %></p>
+    <div class="buttons">
+      <a href="/characters"><button>Go Back</button></a>
+      <a href="/spellbooks/new"><button>Add New Spellbook</button></a>
+      <a href="/characters/<%=@character.id%>/edit"><button>Edit Character</button></a>
+      <form method="post" action="/characters/<%=@character.id%>/delete">
+        <input type="submit" value="Delete Character" />
+      </form>
+    </div>
+    <br>
+    <!-- spellbooks -->
+    <h1 class="title content">Spellbooks</h1>
+    <div class="spell-index">
+      <div class="spell-legend">
+        <div class="spell-item description long-size"><p><strong>Spellbook Name</strong></p></div>
+        <div class="spell-item"><p><strong>Spell Count</strong></p></div>
+      </div>
+      <% @spellbooks.each do |spellbook| %>
+        <a href="/spellbooks/<%=spellbook.id%>" class="spell-row">
+          <div class="spell-item description long-size">
+            <p>
+              <%= spellbook.name %>
+            </p>
+          </div>
+          <div class="spell-item spell-count">
+            <p><%= spellbook.spells_count %></p>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+  <!-- list of spells -->
+  <div class="spell-parent spell-table">
+    <h1 class="title content">Spells known</h1><br>
+  </div>
+</div>
