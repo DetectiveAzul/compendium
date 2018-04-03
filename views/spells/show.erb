@@ -11,9 +11,25 @@
         <input type="submit" value="Delete Spell" />
       </form>
     </div>
+    <br>
+    <h1 class="title content">Learn</h1>
+    <p>Add this Spell to:</p>
+    <div class="student-entry">
+      <form id="new-learning" method="post" action="/learnings">
+        <select id="spellbook-select" name="spellbook_id">
+          <% @spellbooks.each do |spellbook| %>
+          <option value="<%=spellbook.id%>">
+            <%="#{spellbook.name} from #{spellbook.character.name}"%>
+          </option>
+          <% end %>
+        </select>
+        <input style="display: none;" name="spell_id" value="<%= @spell.id%>" />
+        <input type="submit" value="Save Learning" />
+      </form>
+    </div>
   </div>
   <!-- student and learning card -->
-  <div class="spell-parent">
+  <div class="spell-parent student-card">
     <h1 class="title content">Students</h1><br>
     <%="Nobody has learned this spell yet" if @learnings.empty? %>
     <div class="spell-students">
@@ -36,20 +52,5 @@
       <% end %>
     </div>
     <br>
-    <h1 class="title content">Learn</h1>
-    <p>Add this Spell to:</p>
-    <div class="student-entry">
-      <form id="new-learning" method="post" action="/learnings">
-        <select id="spellbook-select" name="spellbook_id">
-          <% @spellbooks.each do |spellbook| %>
-          <option value="<%=spellbook.id%>">
-            <%="#{spellbook.name} from #{spellbook.character.name}"%>
-          </option>
-          <% end %>
-        </select>
-        <input style="display: none;" name="spell_id" value="<%= @spell.id%>" />
-        <input type="submit" value="Save Learning" />
-      </form>
-    </div>
   </div>
 </div>

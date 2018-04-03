@@ -1,8 +1,9 @@
 .spell-parent {
   margin-top: 20px;
-  margin-left: 5px;
-  width: 50%;
+  margin-right: 20px;
+  width: 48%;
   min-width: 25%;
+  height: 50%;
   padding: 15px;
   display: flex;
   align-items: flex-start;
@@ -31,6 +32,7 @@
   align-content: center;
   align-items: center;
   padding: 0;
+  margin: 0;
 }
 
 .spell-parent .title, .subtitle {
