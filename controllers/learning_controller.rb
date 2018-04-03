@@ -16,10 +16,16 @@ get '/learnings/new' do
 end
 
 #create
-post '/learnings' do
+post '/learnings/spells' do
   learning = Learning.new(params)
   learning.save()
   redirect "/spells/#{learning.spell_id}"
+end
+
+post '/learnings/spellbooks' do
+  learning = Learning.new(params)
+  learning.save()
+  redirect "/spellbooks/#{learning.spellbook_id}"
 end
 
 #show

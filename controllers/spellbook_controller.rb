@@ -22,6 +22,8 @@ end
 #show
 get '/spellbooks/:id' do
   @spellbook = Spellbook.find(params['id'].to_i)
+  @spells = @spellbook.spells()
+  @compendium = Spell.all()
   erb(:"/spellbooks/show")
 end
 

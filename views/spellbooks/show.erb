@@ -1,7 +1,59 @@
-<p><%= @spellbook.name %></p>
-<p><%= @spellbook.pages %></p>
-<p><%= @spellbook.character.name %></p>
-<a href="/spellbooks/<%=@spellbook.id%>/edit"><button>Edit Spellbook</button></a>
-<form method="post" action="/spellbooks/<%=@spellbook.id%>/delete">
-  <input type="submit" value="Delete Spellbook" />
-</form>
+<div class="super-parent">
+  <!-- character card -->
+  <div class="spell-parent">
+    <h1 class="title"><%= @spellbook.name %></h1>
+    <h2 class="subtitle content"><%= "#{@spellbook.character.name},
+      #{@spellbook.character.c_class} level #{@spellbook.character.level}"%></h2>
+    <p class="description"><%= @spellbook.description %></p>
+    <div class="buttons">
+      <a href="/spellbooks"><button>Go Back</button></a>
+      <a href="/spellbooks/<%=@spellbook.id%>/edit"><button>Edit Spellbook</button></a>
+      <form method="post" action="/spellbooks/<%=@spellbook.id%>/delete">
+        <input type="submit" value="Delete Spellbook" />
+      </form>
+    </div>
+    <h1 class="title content">Write Spells</h1><br>
+    <div class="student-entry">
+      <form id="new-learning" method="post" action="/learnings/spellbooks">
+        <select id="spell-select" name="spell_id">
+          <% @compendium.each do |spell| %>
+          <option value="<%=spell.id%>">
+            <%="Level #{spell.level}, #{spell.name} from #{spell.school} school" %>
+          </option>
+          <% end %>
+        </select>
+        <input style="display: none;" name="spellbook_id" value="<%= @spellbook.id%>" />
+        <input type="submit" value="Add Spell" />
+      </form>
+    </div>
+  </div>
+  <!-- list of spells -->
+  <div class="spell-parent spell-table">
+    <h1 class="title content">Spells known</h1>
+    <div class="spell-index">
+      <div class="spell-legend">
+        <div class="spell-item"><p><strong>Level</strong></p></div>
+        <div class="spell-item"><p><strong>School</strong></p></div>
+        <div class="spell-item"><p><strong>Name</strong></p></div>
+      </div>
+      <% @spells.each do |spell| %>
+        <a href="/spells/<%=spell.id%>" class="spell-row">
+          <div class="spell-item">
+            <p><% if spell.level == 0 %>
+              <%= "Cantrip" %>
+              <% else %>
+              <%= spell.level %>
+              <% end %>
+            </p>
+          </div>
+          <div class="spell-item">
+            <p> <%= spell.school %> </p>
+          </div>
+          <div class="spell-item">
+            <p> <%= spell.name %> </p>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</div>

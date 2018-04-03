@@ -15,7 +15,7 @@
     <h1 class="title content">Learn</h1>
     <p>Add this Spell to:</p>
     <div class="student-entry">
-      <form id="new-learning" method="post" action="/learnings">
+      <form id="new-learning" method="post" action="/learnings/spells">
         <select id="spellbook-select" name="spellbook_id">
           <% @spellbooks.each do |spellbook| %>
           <option value="<%=spellbook.id%>">
