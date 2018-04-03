@@ -13,4 +13,10 @@ class TestSpellbook < MiniTest::Test
     assert_equal("Gul'dan", @character.name)
     assert_equal(2, result.count)
   end
+
+  def test_spell_count
+    result = @character.spells_count()
+    assert_equal("Gul'dan", @character.name)
+    assert_equal(2, result)
+  end
 end

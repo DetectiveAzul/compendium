@@ -68,4 +68,13 @@ class Character
     return result.map { |spellbook| Spellbook.new(spellbook) } unless result == nil
   end
 
+  def spells_count()
+    spellbooks = self.spellbooks
+    total_number_of_spells = 0
+    spellbooks.each do |spellbook|
+      total_number_of_spells += spellbook.spells_count()
+    end
+    return total_number_of_spell
+  end
+
 end
