@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('spellbook')
+require('pry')
 class Character
   attr_reader :id
   attr_accessor :name, :level, :c_class, :writing_skill, :description
@@ -66,6 +67,13 @@ class Character
     values = [@id]
     result = SqlRunner.run(sql, values)
     return result.map { |spellbook| Spellbook.new(spellbook) } unless result == nil
+  end
+
+  def spells()
+    spellbooks = self.spellbooks
+    spells = []
+    spellbooks.each { |spellbook| spells.concat(spellbook.spells()) }
+    return spells
   end
 
   def spells_count()

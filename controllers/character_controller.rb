@@ -24,6 +24,7 @@ end
 get '/characters/:id' do
   @character = Character.find(params['id'].to_i)
   @spellbooks = @character.spellbooks()
+  @spells = @character.spells()
   erb(:"/characters/show")
 end
 
