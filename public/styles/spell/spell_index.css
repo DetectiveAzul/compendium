@@ -40,6 +40,7 @@
 
 .spell-index .description {
   padding: 20px;
+  min-width: 50%;
   justify-content: flex-start;
 }
 

@@ -74,7 +74,7 @@ class Character
     spellbooks.each do |spellbook|
       total_number_of_spells += spellbook.spells_count()
     end
-    return total_number_of_spell
+    return total_number_of_spells
   end
 
 end
