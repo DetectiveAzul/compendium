@@ -14,7 +14,8 @@ class Spell
   end
 
   def self.all()
-    sql = "SELECT * FROM spells"
+    sql = "SELECT * FROM spells
+    ORDER BY level"
     spells = SqlRunner.run(sql)
     return spells.map { |spell| Spell.new(spell) }
   end

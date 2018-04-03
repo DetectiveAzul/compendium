@@ -14,7 +14,8 @@ class Character
   end
 
   def self.all()
-    sql = "SELECT * FROM characters"
+    sql = "SELECT * FROM characters
+    ORDER BY name"
     characters = SqlRunner.run(sql)
     return characters.map { |character| Character.new(character) }
   end

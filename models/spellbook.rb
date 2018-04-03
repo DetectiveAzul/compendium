@@ -14,7 +14,8 @@ class Spellbook
   end
 
   def self.all()
-    sql = "SELECT * FROM spellbooks"
+    sql = "SELECT * FROM spellbooks
+    ORDER BY id"
     spellbooks = SqlRunner.run(sql)
     return spellbooks.map { |spellbook| Spellbook.new(spellbook) }
   end

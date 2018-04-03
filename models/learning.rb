@@ -9,7 +9,8 @@ class Learning
   end
 
   def self.all()
-    sql = "SELECT * FROM learnings"
+    sql = "SELECT * FROM learnings
+    ORDER BY id"
     learnings = SqlRunner.run(sql)
     return learnings.map { |learning| Learning.new(learning) }
   end
