@@ -15,8 +15,9 @@ end
 
 #create
 post '/characters' do
-  Character.new(params).save()
-  redirect '/characters'
+  character = Character.new(params)
+  character.save()
+  redirect "/characters/#{character.id}"
 end
 
 #show

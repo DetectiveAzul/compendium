@@ -16,8 +16,9 @@ end
 
 #create
 post '/spells' do
-  Spell.new(params).save()
-  redirect '/spells'
+  spell = Spell.new(params)
+  spell.save()
+  redirect "/spells/#{spell.id}"
 end
 
 #show
