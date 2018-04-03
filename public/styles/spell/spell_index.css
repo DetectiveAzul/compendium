@@ -57,7 +57,10 @@
   color: black;
   text-decoration: none;
 }
-
+.spell-item a {
+  color: black;
+  text-decoration: none;
+}
 .level {
   width: 10%;
 }

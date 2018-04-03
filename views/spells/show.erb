@@ -29,28 +29,34 @@
     </div>
   </div>
   <!-- student and learning card -->
-  <div class="spell-parent student-card">
-    <h1 class="title content">Students</h1><br>
-    <%="Nobody has learned this spell yet" if @learnings.empty? %>
-    <div class="spell-students">
-      <% @learnings.each do |learning| %>
-      <div class="student-entry">
-        <p>
-          Written on
-          <a href= "<%="/spellbooks/#{learning.spellbook_id}"%>" >
-            <%= "<strong>'#{learning.spellbook.name}'</strong>"%>
-          </a>
-          by
-          <a href= "<%="/characters/#{learning.spellbook.character_id}"%>" >
-            <%= "<strong>'#{learning.spellbook.character.name}'</strong>" %>
-          </a>
-        </p>
-        <form method="post" action="/learnings/<%=learning.id%>/delete/spells">
-          <input type="submit" value="Delete" />
-        </form>
+  <div class="spell-parent spell-table">
+    <h1 class="title content">Students</h1>
+    <div class="spell-index">
+      <div class="spell-legend">
+        <div class="spell-item"><p><strong>Student</strong></p></div>
+        <div class="spell-item"><p><strong>Spellbook</strong></p></div>
       </div>
+      <% @learnings.each do |learning| %>
+        <div class="same-row">
+          <div class="spell-row">
+            <div class="spell-item">
+              <a href="/characters/<%=learning.spellbook.character.id%>">
+                <%= learning.spellbook.character.name %>
+              </a>
+            </div>
+            <div class="spell-item">
+              <a href="/spellbooks/<%=learning.spellbook.id%>">
+                <%= learning.spellbook.name %>
+              </a>
+            </div>
+          </div>
+          <div class="spell-item">
+            <form method="post" action="/learnings/<%=learning.id%>/delete/spells">
+              <input class="button delete" type="submit" value="Delete">
+            </form>
+          </div>
+        </div>
       <% end %>
     </div>
-    <br>
   </div>
 </div>

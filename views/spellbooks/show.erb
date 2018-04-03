@@ -6,7 +6,8 @@
       #{@spellbook.character.c_class} level #{@spellbook.character.level}"%></h2>
     <p class="description"><%= @spellbook.description %></p>
     <div class="buttons">
-      <a href="/spellbooks"><button>Go Back</button></a>
+      <a href="/spellbooks"><button>Spellbook List</button></a>
+      <a href="/characters/<%=@spellbook.character.id%>"><button>Check Owner</button></a>
       <a href="/spellbooks/<%=@spellbook.id%>/edit"><button>Edit Spellbook</button></a>
       <form method="post" action="/spellbooks/<%=@spellbook.id%>/delete">
         <input type="submit" value="Delete Spellbook" />
