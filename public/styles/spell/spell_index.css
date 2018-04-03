@@ -55,3 +55,7 @@
 .spell-index .long-size {
   width: 75%;
 }
+
+.spell-index .short-size {
+  width: 25%
+}
