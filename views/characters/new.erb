@@ -1,19 +1,18 @@
 <form class= "spell-form" id="new-character" method="post" action="/characters">
   <input id="name" type="text" name="name" value="Character Name" />
-    <div class="same-row">
-      <label for="classes-select"><p>Character Class:</p></label>
-      <select id="classes-select" name="c_class">
-        <% @classes.each do |c_class| %>
-        <option class= "c_class" value="<%=c_class%>"> <%=c_class%> </option>
-        <% end %>
-      </select>
-    </div>
-    <div class="same-row">
-      <label for="level"><p>Level:</p></label>
-      <input id="level" type="number" name="level" value="1" />
-    </div>
-    <div class="buttons">
-      <a href="/characters"><button>Discard Changes</button></a>
-      <input type="submit" value="Create Character" />
-    </div>
+  <div class="same-row">
+    <label for="classes-select"><p>Character Class:</p></label>
+    <select id="classes-select" name="c_class">
+      <% @classes.each do |c_class| %>
+      <option class= "c_class" value="<%=c_class%>"> <%=c_class%> </option>
+      <% end %>
+    </select>
+  </div>
+  <div class="same-row">
+    <label for="level"><p>Level:</p></label>
+    <input id="level" type="number" name="level" value="1" />
+  </div>
+  <div class="buttons">
+    <input type="submit" value="Create Character" />
+  </div>
 </form>
