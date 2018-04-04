@@ -1,3 +1,4 @@
+#This class just stores static information for dropdown menus
 class FixedChoices
   def self.classes()
     return classes_array = [

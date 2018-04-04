@@ -62,6 +62,7 @@ class Spellbook
     SqlRunner.run(sql, values)
   end
 
+  #Return the owner of the spellbook
   def character()
     sql = "SELECT * FROM characters
     WHERE characters.id = $1"
@@ -70,6 +71,7 @@ class Spellbook
     return Character.new(result.first) unless result.first == nil
   end
 
+  #Return all the learnings related to this spellbook
   def learnings()
     sql = "SELECT * FROM learnings
     WHERE spellbook_id = $1"
@@ -78,12 +80,14 @@ class Spellbook
     return result.map { |learning| Learning.new(learning) } unless result == nil
   end
 
+  #Return all the spells written on the book
   def spells()
     learnings = self.learnings()
     spells = learnings.map { |learning| learning.spell }
     return spells
   end
 
+  #Return the count of the spells
   def spells_count()
     return self.spells.count()
   end

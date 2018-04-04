@@ -57,6 +57,7 @@ class Learning
     SqlRunner.run(sql, values)
   end
 
+  #Return the Spell object related to this learning
   def spell()
     sql = "SELECT * FROM spells
     WHERE spells.id = $1"
@@ -65,6 +66,7 @@ class Learning
     return Spell.new(result.first) unless result.first == nil
   end
 
+  #Return the Spellbook object related to this learning
   def spellbook()
     sql = "SELECT * FROM spellbooks
     WHERE spellbooks.id = $1"

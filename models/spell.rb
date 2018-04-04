@@ -62,6 +62,7 @@ class Spell
     SqlRunner.run(sql, values)
   end
 
+  #Return all the learnings connected to this specific spell
   def learnings()
     sql = "SELECT * FROM learnings
     WHERE spell_id = $1"
