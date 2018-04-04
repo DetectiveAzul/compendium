@@ -6,3 +6,10 @@
   flex-flow: wrap;
   width: 100%;
 }
+
+.super-parent .about-body {
+  width: 100%;
+  margin: 5px;
+  margin-top: 15px;
+  padding: 15px;
+}

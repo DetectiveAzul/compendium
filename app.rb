@@ -8,3 +8,7 @@ require_relative('controllers/learning_controller')
 get "/" do
   erb(:root)
 end
+
+get "/about" do
+  erb(:about)
+end
