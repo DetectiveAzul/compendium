@@ -8,6 +8,7 @@ class Learning
     @spellbook_id = options['spellbook_id'].to_i
   end
 
+  #Basic CRUD methods
   def self.all()
     sql = "SELECT * FROM learnings
     ORDER BY id"

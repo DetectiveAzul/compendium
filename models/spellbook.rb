@@ -13,6 +13,7 @@ class Spellbook
     @character_id = options['character_id'].to_i unless options['character_id'] == nil
   end
 
+  #Basic CRUD methods
   def self.all()
     sql = "SELECT * FROM spellbooks
     ORDER BY id"

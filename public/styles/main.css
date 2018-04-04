@@ -16,4 +16,5 @@
 
 html {
   background-image: url("/images/cover.jpg");
+  background-size: cover;
 }

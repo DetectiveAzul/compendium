@@ -9,11 +9,11 @@ class TestSpellbook < MiniTest::Test
 
   def test_taking_learnings()
     result = @spellbook1.learnings()
-    assert_equal(4, result.count())
+    assert_equal(5, result.count())
   end
 
   def test_spell_count()
     result = @spellbook1.spells_count()
-    assert_equal(4, result)
+    assert_equal(5, result)
   end
 end

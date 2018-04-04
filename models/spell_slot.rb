@@ -8,6 +8,7 @@ class SpellSlot
     @quantity = options['quantity'].to_i
   end
 
+  #Basic CRUD methods
   def self.all()
     sql = "SELECT * FROM spell_slots"
     spell_slots = SqlRunner.run(sql)

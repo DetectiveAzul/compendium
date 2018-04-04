@@ -13,6 +13,7 @@ class Spell
     @description = options['description']
   end
 
+  #Basic CRUD methods
   def self.all()
     sql = "SELECT * FROM spells
     ORDER BY level"

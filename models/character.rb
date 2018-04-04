@@ -13,6 +13,7 @@ class Character
     @writing_skill = options['writing_skill'].to_i
   end
 
+  #Basic CRUD methods
   def self.all()
     sql = "SELECT * FROM characters
     ORDER BY name"
