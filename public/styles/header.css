@@ -1,3 +1,4 @@
+/* Resetting box-sizing */
 * {
   box-sizing: border-box;
 }
@@ -6,6 +7,7 @@ html {
   font-family: Scaly;
 }
 
+/* Parent for the header bar */
 .header {
   display: flex;
   justify-content: space-between;
@@ -13,17 +15,12 @@ html {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
+/* Div for containing title and logo */
 .title-and-logo {
   display: flex;
   justify-content: flex-start;
   color: black;
   text-decoration: none;
-}
-
-.menu {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 25px;
 }
 
 .logo {
@@ -36,6 +33,13 @@ html {
   font-family: Nodesto;
   font-size: 64px;
   margin: 5px;
+}
+
+/* Div for all the buttons on the header */
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 25px;
 }
 
 .button {
@@ -78,6 +82,7 @@ html {
     display: block;
 }
 
+/* Colors for the buttons on the header */ 
 .home:hover {
   background-color: rgb(0, 197, 226);
 }
