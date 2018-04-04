@@ -28,6 +28,15 @@ get '/spellbooks/:id' do
   erb(:"/spellbooks/show")
 end
 
+get '/spellbooks/:id/error' do
+  @spellbook = Spellbook.find(params['id'].to_i)
+  @spells = @spellbook.spells()
+  @compendium = Spell.all()
+  @learnings = @spellbook.learnings()
+  @error = "This book already contains the spell"
+  erb(:"/spellbooks/show")
+end
+
 #edit
 get '/spellbooks/:id/edit' do
   @spellbook = Spellbook.find(params['id'].to_i)

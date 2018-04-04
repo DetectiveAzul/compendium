@@ -76,4 +76,15 @@ class Learning
     return Spellbook.new(result.first) unless result.first == nil
   end
 
+  #Check if spell is already on the spellbook
+  def spell_repeated?()
+    sql = "SELECT * FROM learnings
+    WHERE spellbook_id = $1
+    AND
+    spell_id = $2"
+    values = [@spell_id, @spellbook_id]
+    result = SqlRunner.run(sql, values)
+    return true if result.first != nil
+    return false
+  end
 end

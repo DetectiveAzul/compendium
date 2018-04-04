@@ -16,6 +16,7 @@
     <!-- write spells -->
     <h1 class="title content">Write Spells</h1><br>
     <div class="student-entry">
+      <p><%= @error if @error != nil %></p>
       <form id="new-learning" method="post" action="/learnings/spellbooks">
         <select id="spell-select" name="spell_id">
           <% @compendium.each do |spell| %>

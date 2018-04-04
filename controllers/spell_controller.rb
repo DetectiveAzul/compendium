@@ -29,6 +29,14 @@ get '/spells/:id' do
   erb(:"/spells/show")
 end
 
+get '/spells/:id/error' do
+  @spell = Spell.find(params['id'].to_i)
+  @learnings = @spell.learnings()
+  @spellbooks = Spellbook.all()
+  @error = "This spell is already on the selected spellbook"
+  erb(:"/spells/show")
+end
+
 #edit
 get '/spells/:id/edit' do
   @spell = Spell.find(params['id'].to_i)
