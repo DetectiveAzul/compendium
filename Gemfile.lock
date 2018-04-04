@@ -2,9 +2,18 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.11.1)
+    byebug (10.0.2)
+    coderay (1.1.2)
+    method_source (0.9.0)
     multi_json (1.13.1)
     mustermann (1.0.2)
     pg (1.0.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-byebug (3.6.0)
+      byebug (~> 10.0)
+      pry (~> 0.10)
     rack (2.0.4)
     rack-protection (2.0.1)
       rack
@@ -27,6 +36,8 @@ PLATFORMS
 
 DEPENDENCIES
   pg
+  pry
+  pry-byebug
   sinatra
   sinatra-contrib
 
