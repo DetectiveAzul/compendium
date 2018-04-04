@@ -20,3 +20,8 @@
   padding: 0;
   margin: 0;
 }
+
+.error {
+  color: red;
+  margin-right: 10px;
+}

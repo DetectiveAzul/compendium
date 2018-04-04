@@ -92,4 +92,14 @@ class Spellbook
   def spells_count()
     return self.spells.count()
   end
+
+  #check if the name is already on caught by a different spellbook
+  def repeated_name?()
+    sql = "SELECT * FROM spellbooks
+    WHERE name = $1"
+    values = [@name]
+    result = SqlRunner.run(sql, values)
+    return true if result.first != nil
+    return false
+  end
 end

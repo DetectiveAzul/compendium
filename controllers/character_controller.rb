@@ -13,9 +13,17 @@ get '/characters/new' do
   erb(:"/characters/new")
 end
 
+#Return an error if name is repeated
+get '/chracters/new/error' do
+  @error = "Name already exists on the database"
+  @classes = FixedChoices.classes()
+  erb(:"/characters/new")
+end
+
 #create
 post '/characters' do
   character = Character.new(params)
+  redirect "/chracters/new/error" if character.repeated_name?() == true
   character.save()
   redirect "/characters/#{character.id}"
 end

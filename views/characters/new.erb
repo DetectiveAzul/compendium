@@ -1,6 +1,7 @@
 <form class= "spell-form" id="new-character" method="post" action="/characters">
   <!-- name -->
   <input id="name" type="text" name="name" value="Character Name" />
+  <p class="error"><%= @error if @error != nil %></p>
   <div class="same-row">
     <!-- classes -->
     <label for="classes-select"><p>Character Class:</p></label>

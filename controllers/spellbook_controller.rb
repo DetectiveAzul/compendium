@@ -12,9 +12,17 @@ get '/spellbooks/new' do
   erb(:"/spellbooks/new")
 end
 
+get '/spellbooks/new' do
+  @error = "Name already exists on the database"
+  @characters = Character.all()
+  erb(:"/spellbooks/new")
+end
+
+
 #create
 post '/spellbooks' do
   spellbook = Spellbook.new(params)
+  redirect "/chracters/new/error" if spell.repeated_name?() == true
   spellbook.save()
   redirect "/spellbooks/#{spellbook.id}"
 end

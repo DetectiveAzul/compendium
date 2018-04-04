@@ -90,4 +90,14 @@ class Character
     return total_number_of_spells
   end
 
+  #Check if name is repeated
+  def repeated_name?()
+    sql = "SELECT * FROM characters
+    WHERE name = $1"
+    values = [@name]
+    result = SqlRunner.run(sql, values)
+    return true if result.first != nil
+    return false
+  end
+
 end

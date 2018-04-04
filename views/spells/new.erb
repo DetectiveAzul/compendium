@@ -1,6 +1,7 @@
 <form class= "spell-form" id="edit-spell" method="post" action="/spells">
   <!-- name -->
   <input id="name" type="text" name="name" value="Spell Name" />
+  <p class="error"><%= @error if @error != nil %></p>
   <div class="same-row">
     <!-- school -->
     <label for="school-select"><p>School:</p></label>
