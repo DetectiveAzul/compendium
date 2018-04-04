@@ -1,3 +1,4 @@
+/* Parent class for tables */
 .spell-index {
   display: flex;
   flex-direction: column;
@@ -5,6 +6,7 @@
   width: 100%
 }
 
+/* Row with the header of the table */
 .spell-legend {
   margin: 5px;
   display: flex;
@@ -12,6 +14,8 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+/* A row on the table */
 .spell-row {
   margin-left: 10px;
   margin-right: 10px;
@@ -26,6 +30,28 @@
   text-decoration: none;
 }
 
+.spell-row:hover {
+  background-color: #ddd;
+}
+
+/* Cells in a row */
+.spell-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 125px;
+  max-width: 100%;
+  height: 50px;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+.spell-item a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Delete button on tables */
 .delete {
   border: none;
   margin: 15px;
@@ -43,26 +69,8 @@
   outline: none;
 }
 
-.spell-row:hover {
-  background-color: #ddd;
-}
 
-.spell-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 125px;
-  max-width: 100%;
-  height: 50px;
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-}
-.spell-item a {
-  color: black;
-  text-decoration: none;
-}
-
+/* Individual CSS for special classes of cells on the row */
 .level {
   width: 10%;
 }

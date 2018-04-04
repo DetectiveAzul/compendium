@@ -1,3 +1,4 @@
+/* New and Edit forms */
 .spell-form {
 display: flex;
 flex-direction: column;
@@ -12,13 +13,6 @@ background-color: white;
 
 }
 
-.same-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-}
 .spell-form input[type="text"] {
   font-size: 64px;
   font-family: Nodesto;
