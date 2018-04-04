@@ -64,7 +64,7 @@ end
 #update
 post '/spellbooks/:id' do
   spellbook = Spellbook.new(params)
-  redirect "/spellbooks/#{params['id']}/edit/error" if spellbooks.repeated_name? == true
+  redirect "/spellbooks/#{params['id']}/edit/error" if spellbook.repeated_name? == true
   spellbook.update()
   redirect "/spellbooks/#{params['id']}"
 
