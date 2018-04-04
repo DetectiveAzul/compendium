@@ -1,6 +1,7 @@
 <form class= "spell-form" id="edit-spellbook" method="post" action="/spellbooks/<%=@spellbook.id%>">
   <!-- name -->
   <input id="name" type="text" name="name" value="<%=@spellbook.name%>" />
+  <p class="error"><%= @error if @error != nil %></p>
   <div class="same-row">
     <!-- owner -->
     <label for="owner-select"><p>Owner:</p></label>

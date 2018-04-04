@@ -12,6 +12,7 @@ get '/spellbooks/new' do
   erb(:"/spellbooks/new")
 end
 
+#Invalid creation if name already in the database
 get '/spellbooks/new' do
   @error = "Name already exists on the database"
   @characters = Character.all()
@@ -22,7 +23,7 @@ end
 #create
 post '/spellbooks' do
   spellbook = Spellbook.new(params)
-  redirect "/chracters/new/error" if spell.repeated_name?() == true
+  redirect "/spellbooks/new/error" if spellbook.repeated_name?() == true
   spellbook.save()
   redirect "/spellbooks/#{spellbook.id}"
 end
@@ -36,6 +37,7 @@ get '/spellbooks/:id' do
   erb(:"/spellbooks/show")
 end
 
+#Error if book already contains the spell during a new learning
 get '/spellbooks/:id/error' do
   @spellbook = Spellbook.find(params['id'].to_i)
   @spells = @spellbook.spells()
@@ -52,9 +54,17 @@ get '/spellbooks/:id/edit' do
   erb(:"/spellbooks/edit")
 end
 
+get '/spellbooks/:id/edit/error' do
+  @spellbook = Spellbook.find(params['id'].to_i)
+  @characters = Character.all()
+  @error = "Name already exists on the database"
+  erb(:"/spellbooks/edit")
+end
+
 #update
 post '/spellbooks/:id' do
   spellbook = Spellbook.new(params)
+  redirect "/spellbooks/#{params['id']}/edit/error" if spellbooks.repeated_name? == true
   spellbook.update()
   redirect "/spellbooks/#{params['id']}"
 

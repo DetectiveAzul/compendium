@@ -75,7 +75,12 @@
   width: 10%;
 }
 
-
+.spell-index p {
+  min-width: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 .spell-index .description {
   padding: 20px;
   justify-content: flex-start;

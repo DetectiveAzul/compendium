@@ -43,9 +43,18 @@ get '/characters/:id/edit' do
   erb(:"/characters/edit")
 end
 
+#Invalids editing if repeated name
+get '/characters/:id/edit/error' do
+  @character = Character.find(params['id'].to_i)
+  @classes = FixedChoices.classes()
+  @error = "Name already exists on the database"
+  erb(:"/characters/edit")
+end
+
 #update
 post '/characters/:id' do
   character = Character.new(params)
+  redirect "/characters/#{params['id']}/edit/error" if character.repeated_name? == true
   character.update()
   redirect "/characters/#{params['id']}"
 

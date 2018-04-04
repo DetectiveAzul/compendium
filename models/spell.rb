@@ -78,7 +78,7 @@ class Spell
     WHERE name = $1"
     values = [@name]
     result = SqlRunner.run(sql, values)
-    return true if result.first != nil
+    return true if result.first != nil && result.first['id'].to_i != @id
     return false
   end
 end

@@ -24,7 +24,7 @@ end
 #create
 post '/spells' do
   spell = Spell.new(params)
-  redirect "/chracters/new/error" if spell.repeated_name?() == true
+  redirect "/spells/new/error" if spell.repeated_name?() == true
   spell.save()
   redirect "/spells/#{spell.id}"
 end
@@ -37,6 +37,7 @@ get '/spells/:id' do
   erb(:"/spells/show")
 end
 
+#invalid learning if spell is going to be repeated
 get '/spells/:id/error' do
   @spell = Spell.find(params['id'].to_i)
   @learnings = @spell.learnings()
@@ -52,12 +53,19 @@ get '/spells/:id/edit' do
   erb(:"/spells/edit")
 end
 
+get '/spells/:id/edit/error' do
+  @spell = Spell.find(params['id'].to_i)
+  @schools = FixedChoices.schools()
+  @error =  "Spell Name is already in the database"
+  erb(:"/spells/edit")
+end
+
 #update
 post '/spells/:id' do
   spell = Spell.new(params)
+  redirect "/spells/#{params['id']}/edit/error" if spell.repeated_name? == true
   spell.update()
   redirect "/spells/#{params['id']}"
-
 end
 
 
