@@ -54,6 +54,7 @@ get '/spellbooks/:id/edit' do
   erb(:"/spellbooks/edit")
 end
 
+#Returns an error if name is already on the database
 get '/spellbooks/:id/edit/error' do
   @spellbook = Spellbook.find(params['id'].to_i)
   @characters = Character.all()
