@@ -1,6 +1,8 @@
 <form class= "spell-form" id="new-character" method="post" action="/characters">
+  <!-- name -->
   <input id="name" type="text" name="name" value="Character Name" />
   <div class="same-row">
+    <!-- classes -->
     <label for="classes-select"><p>Character Class:</p></label>
     <select id="classes-select" name="c_class">
       <% @classes.each do |c_class| %>
@@ -9,9 +11,11 @@
     </select>
   </div>
   <div class="same-row">
+    <!-- level -->
     <label for="level"><p>Level:</p></label>
     <input id="level" type="number" name="level" value="1" />
   </div>
+  <!-- description -->
   <textarea name="description" form="new-character"> Enter description or other notes here </textarea>
   <div class="buttons">
     <input type="submit" value="Create Character" />

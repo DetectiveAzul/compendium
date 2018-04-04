@@ -1,6 +1,8 @@
 <form class= "spell-form" id="edit-spellbook" method="post" action="/spellbooks/<%=@spellbook.id%>">
+  <!-- name -->
   <input id="name" type="text" name="name" value="<%=@spellbook.name%>" />
   <div class="same-row">
+    <!-- owner -->
     <label for="owner-select"><p>Owner:</p></label>
     <select id="owner-select" name="character_id">
       <% @characters.each do |character| %>
@@ -11,6 +13,7 @@
       <% end %>
     </select>
   </div>
+  <!-- description -->
   <textarea name="description" form="edit-spellbook"> <%=@spellbook.description%> </textarea>
   <div class="buttons">
     <input type="submit" value="Edit Spellbook" />

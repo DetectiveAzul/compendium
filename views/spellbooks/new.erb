@@ -1,6 +1,8 @@
 <form class= "spell-form" id="new-spellbook" method="post" action="/spellbooks">
+  <!-- name -->
   <input id="name" type="text" name="name" value="Spellbook Name" />
   <div class="same-row">
+    <!-- owner -->
     <label for="owner-select"><p>Owner:</p></label>
     <select id="owner-select" name="character_id">
       <% @characters.each do |character| %>
@@ -8,6 +10,7 @@
       <% end %>
     </select>
   </div>
+  <!-- description -->
   <textarea name="description" form="new-spellbook"> Enter description or other notes here </textarea>
   <div class="buttons">
     <input type="submit" value="Create Spellbook" />

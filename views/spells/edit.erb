@@ -1,6 +1,8 @@
 <form class= "spell-form" id="edit-spell" method="post" action="/spells/<%=@spell.id%>">
+  <!-- name -->
   <input id="name" type="text" name="name" value="<%=@spell.name%>" />
   <div class="same-row">
+    <!-- school -->
     <label for="school-select"><p>School:</p></label>
     <select id="school-select" name="school">
       <% @schools.each do |school| %>
@@ -9,9 +11,11 @@
     </select>
   </div>
   <div class="same-row">
+    <!-- level -->
     <label for="level"><p>Level:</p></label>
     <input id="level" type="number" name="level" value=<%=@spell.level%> />
   </div>
+  <!-- description -->
   <textarea name="description" form="edit-spell"> <%=@spell.description%> </textarea>
   <div class="buttons">
     <input type="submit" value="Update Spell" />
