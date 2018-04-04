@@ -5,11 +5,14 @@ require_relative('../models/learning')
 require_relative('../models/character')
 require_relative('../models/spell_slot')
 
+# Delete everything from the DB to avoid duplicates
 Learning.delete_all()
 Spell.delete_all()
 Spellbook.delete_all()
 SpellSlot.delete_all()
 Character.delete_all()
+
+# Creation and saving of the spells on the DB
 
 spell01_hash = {
   'name' => 'Acid Splash',
@@ -50,6 +53,7 @@ spell02.save()
 spell03.save()
 spell04.save()
 
+# Creation and saving of the characters on the DB
 character01_hash = {
   'name' => 'Valtek',
   'level' => 1,
@@ -70,6 +74,7 @@ character02 = Character.new(character02_hash)
 character01.save()
 character02.save()
 
+# Creation and saving of the spell slots (for future extension) on the DB
 spellslot01 = SpellSlot.new({
   'character_id' => character01.id,
   'level' => 1,
@@ -90,6 +95,7 @@ spellslot01.save()
 spellslot02.save()
 spellslot03.save()
 
+# Creation and saving of the spellbooks on the DB
 spellbook01_hash = {
   "name" => "Level 1 Spellbook",
   "pages" => 100,
@@ -114,6 +120,7 @@ spellbook01.save()
 spellbook02.save()
 spellbook03.save()
 
+# Creation and saving of the learnings (conection between spell and book) on the DB
 learning01 = Learning.new( {'spell_id' => spell01.id,'spellbook_id' => spellbook01.id } )
 learning02 = Learning.new( {'spell_id' => spell02.id,'spellbook_id' => spellbook01.id } )
 learning03 = Learning.new( {'spell_id' => spell03.id,'spellbook_id' => spellbook01.id } )
@@ -127,6 +134,3 @@ learning03.save()
 learning04.save()
 learning05.save()
 learning06.save()
-
-binding.pry()
-nil

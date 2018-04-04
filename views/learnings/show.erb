@@ -1,7 +1,0 @@
-  <p><%= @learning.spellbook.character.name %></p>
-  <p><%= @learning.spellbook.name %></p>
-  <p><%= @learning.spell.name %></p>
-  <a href="/learnings/<%=@learning.id%>/edit"><button>Edit Learning</button></a>
-  <form method="post" action="/learnings/<%=@learning.id%>/delete">
-    <input type="submit" value="Delete Learning" />
-  </form>

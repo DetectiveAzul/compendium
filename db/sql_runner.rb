@@ -1,5 +1,5 @@
 require('pg')
-
+#This class allows us to run SQL code
 class SqlRunner
   def self.run(sql, values = [])
     begin

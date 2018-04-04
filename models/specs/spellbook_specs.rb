@@ -4,8 +4,7 @@ require('minitest/rg')
 
 class TestSpellbook < MiniTest::Test
   def setup()
-    @spellbooks = Spellbook.all()
-    @spellbook1 = @spellbooks.first()
+    @spellbook1 = Spellbook.find(1)
   end
 
   def test_taking_learnings()

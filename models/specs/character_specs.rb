@@ -4,8 +4,7 @@ require('minitest/rg')
 
 class TestSpellbook < MiniTest::Test
   def setup()
-    @characters = Character.all()
-    @character = @characters.first
+    @character = Character.find(1)
   end
 
   def test_spellbooks()
