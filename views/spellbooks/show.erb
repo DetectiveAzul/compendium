@@ -1,5 +1,5 @@
 <div class="super-parent">
-  <!-- character card -->
+  <!-- spellbook card -->
   <div class="spell-parent">
     <h1 class="title"><%= @spellbook.name %></h1>
     <h2 class="subtitle content"><%= "#{@spellbook.character.name},
@@ -13,6 +13,7 @@
         <input type="submit" value="Delete Spellbook" />
       </form>
     </div>
+    <!-- write spells -->
     <h1 class="title content">Write Spells</h1><br>
     <div class="student-entry">
       <form id="new-learning" method="post" action="/learnings/spellbooks">

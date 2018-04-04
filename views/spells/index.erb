@@ -1,10 +1,12 @@
 <div class = "spell-index">
+  <!-- table header -->
   <div class="spell-legend">
     <div class="spell-item"><p><strong>Level</strong></p></div>
     <div class="spell-item"><p><strong>School</strong></p></div>
     <div class="spell-item"><p><strong>Name</strong></p></div>
     <div class="spell-item"><p><strong>Description</strong></p></div>
   </div>
+  <!-- row population -->
   <% @spells.each do |spell| %>
     <a href="/spells/<%=spell.id%>" class="spell-row">
       <div class="spell-item level">

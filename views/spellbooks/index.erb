@@ -1,4 +1,5 @@
 <div class = "spell-index">
+  <!-- table header -->
   <div class="spell-legend">
     <div class="spell-item"><p><strong>Owner</strong></p></div>
     <div class="spell-item"><p><strong>Owner Class</strong></p></div>
@@ -6,6 +7,7 @@
     <div class="spell-item"><p><strong>Spells Count</strong></p></div>
     <div class="spell-item description"><p><strong>Description</strong></p></div>
   </div>
+  <!-- row population -->
   <% @spellbooks.each do |spellbook| %>
     <a href="/spellbooks/<%=spellbook.id%>" class="spell-row">
       <div class="spell-item owner">
@@ -27,4 +29,4 @@
       </div>
     </a>
   <% end %>
-</div> 
+</div>
