@@ -13,7 +13,7 @@ get '/spellbooks/new' do
 end
 
 #Invalid creation if name already in the database
-get '/spellbooks/new' do
+get '/spellbooks/new/error' do
   @error = "Name already exists on the database"
   @characters = Character.all()
   erb(:"/spellbooks/new")

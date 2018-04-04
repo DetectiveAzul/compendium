@@ -15,7 +15,7 @@ get '/spells/new' do
 end
 
 #error if spell repeated
-get '/spells/new' do
+get '/spells/new/error' do
   @error = "Spell Name already exists on the database"
   @schools = FixedChoices.schools()
   erb(:"/spells/new")
@@ -53,6 +53,7 @@ get '/spells/:id/edit' do
   erb(:"/spells/edit")
 end
 
+#error is name already in the database
 get '/spells/:id/edit/error' do
   @spell = Spell.find(params['id'].to_i)
   @schools = FixedChoices.schools()

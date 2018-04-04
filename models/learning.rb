@@ -82,7 +82,7 @@ class Learning
     WHERE spellbook_id = $1
     AND
     spell_id = $2"
-    values = [@spell_id, @spellbook_id]
+    values = [@spellbook_id, @spell_id]
     result = SqlRunner.run(sql, values)
     return true if result.first != nil
     return false
