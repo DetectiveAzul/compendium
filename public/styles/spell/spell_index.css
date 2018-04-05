@@ -34,18 +34,51 @@
   background-color: #ddd;
 }
 
-/* Cells in a row */
+/* CSS for cells */
+
+.spell-index p {
+  min-width: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.spell-index .description {
+  padding: 20px;
+  justify-content: flex-start;
+}
+
+.spell-index .description p {
+  min-width: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.spell-index .long-size {
+  width: 75%;
+}
+
+.spell-index .small-size {
+  min-width: 0px;
+  width: 25%
+}
+
 .spell-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 125px;
-  max-width: 100%;
+  min-width: 160px;
   height: 50px;
   padding: 10px;
   color: black;
   text-decoration: none;
 }
+
+.spell-index .name {
+  width: 150px;
+  justify-content: flex-start;
+}
+
 .spell-item a {
   color: black;
   text-decoration: none;
@@ -73,31 +106,4 @@
 /* Individual CSS for special classes of cells on the row */
 .level {
   width: 10%;
-}
-
-.spell-index p {
-  min-width: 0px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.spell-index .description {
-  padding: 20px;
-  justify-content: flex-start;
-}
-
-.spell-index .description p {
-  min-width: 0px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.spell-index .long-size {
-  width: 75%;
-}
-
-.spell-index .small-size {
-  min-width: 0px;
-  width: 25%
 }

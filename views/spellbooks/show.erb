@@ -35,14 +35,14 @@
     <h1 class="title content">Spells List</h1>
     <div class="spell-index">
       <div class="spell-legend">
-        <div class="spell-item"><p><strong>Level</strong></p></div>
-        <div class="spell-item"><p><strong>School</strong></p></div>
-        <div class="spell-item"><p><strong>Name</strong></p></div>
+        <div class="spell-item small-size"><p><strong>Level</strong></p></div>
+        <div class="spell-item small-size name"><p><strong>School</strong></p></div>
+        <div class="spell-item small-size name"><p><strong>Name</strong></p></div>
       </div>
       <% @learnings.each do |learning| %>
         <div class="same-row">
           <a href="/spells/<%=learning.spell.id%>" class="spell-row">
-            <div class="spell-item level">
+            <div class="spell-item small-size level">
               <p href="/spells/<%=learning.spell.id%>"><% if learning.spell.level == 0 %>
                 <%= "Cantrip" %>
                 <% else %>
@@ -53,7 +53,7 @@
             <div class="spell-item">
               <p> <%= learning.spell.school %> </p>
             </div>
-            <div class="spell-item">
+            <div class="spell-item small-size">
               <p> <%= learning.spell.name %> </p>
             </div>
           </a>
