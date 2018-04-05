@@ -31,6 +31,7 @@ end
 #show
 get '/characters/:id' do
   @character = Character.find(params['id'].to_i)
+  redirect "/nofound" if @character == nil
   @spellbooks = @character.spellbooks()
   @spells = @character.spells()
   erb(:"/characters/show")
@@ -39,6 +40,7 @@ end
 #edit
 get '/characters/:id/edit' do
   @character = Character.find(params['id'].to_i)
+  redirect "/nofound" if @character == nil
   @classes = FixedChoices.classes()
   erb(:"/characters/edit")
 end

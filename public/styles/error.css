@@ -1,0 +1,25 @@
+.whole-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-decoration: none;
+  color: black;
+}
+
+h1, p {
+  font-family: Nodesto;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 20px;
+}
+
+img {
+  width: 25vh;
+}

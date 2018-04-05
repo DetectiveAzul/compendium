@@ -31,6 +31,7 @@ end
 #show
 get '/spellbooks/:id' do
   @spellbook = Spellbook.find(params['id'].to_i)
+  redirect "/nofound" if @spellbook == nil
   @spells = @spellbook.spells()
   @compendium = Spell.all()
   @learnings = @spellbook.learnings()
@@ -50,6 +51,7 @@ end
 #edit
 get '/spellbooks/:id/edit' do
   @spellbook = Spellbook.find(params['id'].to_i)
+  redirect "/nofound" if @spellbook == nil
   @characters = Character.all()
   erb(:"/spellbooks/edit")
 end

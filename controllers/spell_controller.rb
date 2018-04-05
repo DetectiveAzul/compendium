@@ -32,6 +32,7 @@ end
 #show
 get '/spells/:id' do
   @spell = Spell.find(params['id'].to_i)
+  redirect "/nofound" if @spell == nil
   @learnings = @spell.learnings()
   @spellbooks = Spellbook.all()
   erb(:"/spells/show")
@@ -49,6 +50,7 @@ end
 #edit
 get '/spells/:id/edit' do
   @spell = Spell.find(params['id'].to_i)
+  redirect "/nofound" if @spell == nil
   @schools = FixedChoices.schools()
   erb(:"/spells/edit")
 end
