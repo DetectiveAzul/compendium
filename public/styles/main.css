@@ -2,7 +2,7 @@
 html {
   background-image: url("/images/cover.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Super parent class for flexbox manage */
