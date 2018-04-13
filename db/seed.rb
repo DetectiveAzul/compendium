@@ -1,4 +1,3 @@
-require('pry')
 require_relative('../models/spell')
 require_relative('../models/spellbook')
 require_relative('../models/learning')
