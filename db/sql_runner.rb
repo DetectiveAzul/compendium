@@ -3,8 +3,8 @@ require('pg')
 class SqlRunner
   def self.run(sql, values = [])
     begin
-      db = PG.connect({ 
-        dbname: 'dnd_compendium',
+      db = PG.connect({
+        dbname: 'dbc9gs5qeprkkd',
         host: 'ec2-54-235-109-37.compute-1.amazonaws.com',
         port: 5432,
         user: 'xiswkzudmpbrxl',
