@@ -106,3 +106,7 @@
 .level {
   width: 10%;
 }
+
+.description br {
+  display: none;
+}
