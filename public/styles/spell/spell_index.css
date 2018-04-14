@@ -107,6 +107,6 @@
   width: 10%;
 }
 
-.description span {
+.spell-item span, br {
   display: none;
 }
