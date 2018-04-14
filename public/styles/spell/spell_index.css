@@ -107,6 +107,6 @@
   width: 10%;
 }
 
-.spell-item span, br {
+.spell-item span, .spell-item br {
   display: none;
 }
