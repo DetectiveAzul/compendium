@@ -1,5 +1,13 @@
 ## Compendium
 
-You want to keep track of the spells existing from the different schools of magic and, as a added bonus, being able to create spellbooks containing the spells known and studied by a specific wizard.
+A Spellbook tracker app concept made in week 5 of the Codeclan software development course. A live version of the app can be found at: http://dndcompendium.herokuapp.com/. 
 
-You must be able to create new spells (name, school, level and description) which can be written on several spellbooks, look for an specific spell from the database or show all the spells on a specific book. You should be able to add and remove spells from different books as well. Books should contain a name and the list of spells contained on the book.
+# Language and Development
+
+Compendium is a Sinatra RESTfull WebApp written following the MVC development model. Model was written using Ruby, View is based on HTML, CSS and Embedded Ruby. Controller was handled by Sinatra Framework. Finally, database and CRUD actions were handled by PSQL. 
+
+# Compendium
+
+Compendium is a Spellbook tracker made to create, track and organize Dungeons and Dragons spells on units call Spellbooks, owned by Characters. 
+
+
