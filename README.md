@@ -18,5 +18,5 @@ Compendium is a Spellbook tracker made to create, track and organize Dungeons an
 ## Run
 * `ruby app.rb`
 
-
+![character view](https://github.com/DetectiveAzul/compendium/blob/master/screenshot.png?raw=true)
 
