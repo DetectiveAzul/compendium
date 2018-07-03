@@ -1,6 +1,6 @@
 # Compendium
 
-Compendium is a Spellbook tracker made to create, track and organize Dungeons and Dragons spells on units call Spellbooks, owned by Characters. Compendium is a Sinatra RESTfull WebApp written following the MVC development model. Model was written using Ruby, View is based on HTML, CSS and Embedded Ruby. Controller was handled by Sinatra Framework. Finally, database and CRUD actions were handled by PSQL. It was made during week 5 of the Codeclan software development course. A live version of the app can be found at: http://dndcompendium.herokuapp.com/. 
+Compendium is a Spellbook tracker made to create, track and organize Dungeons and Dragons spells on units called Spellbooks, owned by Characters. Compendium is a Sinatra RESTfull WebApp written following the MVC development model. Model was written using Ruby, View is based on HTML, CSS and Embedded Ruby. Controller was handled by Sinatra Framework. Finally, database and CRUD actions were handled by PSQL. It was made during week 5 of the Codeclan software development course. A live version of the app can be found at: http://dndcompendium.herokuapp.com/. 
 
 ## Install
 * Install Postgres: `$ brew install postgres && brew services start postgresql`
